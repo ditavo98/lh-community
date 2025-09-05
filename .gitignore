@@ -1,0 +1,11 @@
+build
+.dart_tool
+.idea
+.flutter-plugins
+.flutter-plugins-dependencies
+lib/generated/
+pubspec.lock
+*g.dart
+ios/.DS_Store
+.DS_Store
+devtools_options.yaml
