@@ -174,7 +174,7 @@ class _MediaPreviewState extends State<MediaPreview> {
                         if (file is! CommunityFileElementDto ||
                             file.url.isNullOrEmpty) {
                           AppDialog.showFailedToast(
-                              msg: str.error_something_went_wrong_try_again);
+                              msg: cmStr.error_something_went_wrong_try_again);
                           return;
                         }
                         CMDownloader().downloadFile(urlLink: file.url!);

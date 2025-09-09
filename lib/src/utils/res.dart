@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:lh_community/generated/assets.gen.dart';
 import 'package:lh_community/generated/l10n.dart';
 
-CMS get str => CMS.current;
+CMS get cmStr => CMS.current;
 
 const $AssetsSvgGen cmSvg = Assets.svg;
 const $AssetsImagesGen cmImg = Assets.images;

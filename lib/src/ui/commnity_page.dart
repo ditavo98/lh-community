@@ -8,26 +8,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lh_community/lh_community.dart';
 import 'package:lh_community/src/core/model/post_type_dto.dart';
-import 'package:lh_community/src/lh_community.dart';
-import 'package:lh_community/src/ui/cubits/community_artist_post_cubit/community_artist_post_cubit.dart';
-import 'package:lh_community/src/ui/cubits/community_cubit.dart';
-import 'package:lh_community/src/ui/post_detail.dart';
-import 'package:lh_community/src/ui/widgets/artist_selected.dart';
-import 'package:lh_community/src/ui/widgets/post_view/post_view.dart';
-import 'package:lh_community/src/utils/community_color.dart';
-import 'package:lh_community/src/utils/community_image.dart';
-import 'package:lh_community/src/utils/community_scaffold.dart';
-import 'package:lh_community/src/utils/community_text_widget.dart';
-import 'package:lh_community/src/utils/base_simmer_box.dart';
-import 'package:lh_community/src/utils/collection_ex.dart';
-import 'package:lh_community/src/utils/dimen_mixin.dart';
-import 'package:lh_community/src/utils/event_bus.dart';
-import 'package:lh_community/src/utils/keep_alive_widget.dart';
-import 'package:lh_community/src/utils/loadmore_widget.dart';
-import 'package:lh_community/src/utils/no_data.dart';
-import 'package:lh_community/src/utils/res.dart';
-import 'package:lh_community/src/utils/string_ex.dart';
-import 'package:lh_community/src/utils/text_style.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommunityPage extends StatefulWidget {
@@ -159,7 +139,7 @@ class _CommunityPageState extends State<CommunityPage>
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Text(str.text_fan, style: LHTextStyle.h3),
+                    child: Text(cmStr.text_fan, style: LHTextStyle.h3),
                   ),
                   const ArtistSelected(),
                 ],
@@ -211,7 +191,7 @@ class _CommunityPageState extends State<CommunityPage>
             if (state.selectArtist == null ||
                 state.sectionTypes.isNullOrEmpty) {
               return NoData(
-                text: str.have_no_star,
+                text: cmStr.have_no_star,
                 onRefresh: () {
                   context.read<CMPostCubit>().getData();
                 },
@@ -305,8 +285,8 @@ class _CommunityPageState extends State<CommunityPage>
                           if (state.postList.isNullOrEmpty) {
                             return NoData(
                                 text: type.sectionType == SectionType.gallery
-                                    ? str.text_no_gallery_registered
-                                    : str.text_no_posts_yet);
+                                    ? cmStr.text_no_gallery_registered
+                                    : cmStr.text_no_posts_yet);
                           }
                           return LoadMore(
                             onLoadMore: () {
@@ -353,7 +333,7 @@ class _CommunityPageState extends State<CommunityPage>
             CMImageView(cmSvg.icHeadphones, size: 24),
             Expanded(
               child: CMCustomText(
-                str.text_streaming_list_user(
+                cmStr.text_streaming_list_user(
                     _cubit.state.selectArtist?.name ?? ''),
                 style: LHTextStyle.subtitle3_1.copyWith(
                   height: 20 / 15,

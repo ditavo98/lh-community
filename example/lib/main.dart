@@ -29,20 +29,22 @@ class _MyAppState extends State<MyApp> {
       avatar:
           "https://cdn.startalk.app/startalk/prod/user/profile/profileThumb_rabbit.svg",
     );
+    Future.delayed(Duration(seconds: 2), () {
+      LHCommunity().updatePostType([
+        CMPostTypePartnerData(
+          id: "6",
+          nickname: "남궁진",
+          avatar:
+              "https://cdn.startalk.app/startalk/prod/user/profile/6/f24fbf7f1783-1753851319.jpg",
+          message: "hiii",
+        ),
+      ]);
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    LHCommunity().updatePostType([
-      CMPostTypePartnerData(
-        id: "6",
-        nickname: "남궁진",
-        avatar:
-            "https://cdn.startalk.app/startalk/prod/user/profile/6/f24fbf7f1783-1753851319.jpg",
-        message: "hiii",
-      ),
-    ]);
     return BlocProvider(
       create: (context) => CMModifyPostCubit(),
       child: MaterialApp(
@@ -70,21 +72,24 @@ class _MyAppState extends State<MyApp> {
           ...GlobalMaterialLocalizations.delegates,
           CMS.delegate,
         ],
-        locale: Locale('ko'),builder: (ctx, child) {
-        Widget widget = Overlay(
-          initialEntries: [
-            OverlayEntry(builder: (context) {
-              return MediaQuery(
-                data: MediaQuery.of(context).copyWith(
-                  textScaler: TextScaler.noScaling,
-                ),
-                child: child ?? const SizedBox(),
-              );
-            })
-          ],
-        );
-        return widget;
-      },
+        locale: Locale('ko'),
+        builder: (ctx, child) {
+          Widget widget = Overlay(
+            initialEntries: [
+              OverlayEntry(
+                builder: (context) {
+                  return MediaQuery(
+                    data: MediaQuery.of(
+                      context,
+                    ).copyWith(textScaler: TextScaler.noScaling),
+                    child: child ?? const SizedBox(),
+                  );
+                },
+              ),
+            ],
+          );
+          return widget;
+        },
       ),
     );
   }

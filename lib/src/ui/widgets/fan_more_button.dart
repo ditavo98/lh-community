@@ -60,7 +60,7 @@ class CMMoreButton extends StatelessWidget {
       onTap: () {
         AppDialog.showCupertinoActionSheet(
           context,
-          cancelWidget: Text(str.text_cancel, style: LHTextStyle.body2),
+          cancelWidget: Text(cmStr.text_cancel, style: LHTextStyle.body2),
           actions: _actions(context),
         );
       },
@@ -83,7 +83,7 @@ class CMMoreButton extends StatelessWidget {
                 CMImageView(cmSvg.icDelete, size: 24, color: CMColor.grey7),
                 Dimen.sBWidth8,
                 Text(
-                  str.text_delete,
+                  cmStr.text_delete,
                   style: LHTextStyle.button1.copyWith(color: CMColor.grey7),
                 ),
               ],
@@ -110,7 +110,7 @@ class CMMoreButton extends StatelessWidget {
               ),
               Dimen.sBWidth8,
               Text(
-                str.text_report,
+                cmStr.text_report,
                 style: LHTextStyle.button1.copyWith(color: CMColor.red9),
               ),
             ],
@@ -139,7 +139,7 @@ class CMMoreButton extends StatelessWidget {
               ),
               Dimen.sBWidth8,
               Text(
-                str.text_hide,
+                cmStr.text_hide,
                 style: LHTextStyle.button1.copyWith(color: CMColor.red9),
               ),
             ],
@@ -155,8 +155,8 @@ class CMMoreButton extends StatelessWidget {
 
   _onBlock(BuildContext context) async {
     AppDialog.showAlertDialog(
-      title: str.text_confirm_hide_all_posts_by_author,
-      cancelText: str.text_cancel,
+      title: cmStr.text_confirm_hide_all_posts_by_author,
+      cancelText: cmStr.text_cancel,
       acceptedCallback: () async {
         Navigator.of(context).pop();
         final id = communityUser?.id ?? -1;
@@ -168,7 +168,7 @@ class CMMoreButton extends StatelessWidget {
           onBlocked?.call();
         } else {
           AppDialog.showFailedToast(
-              msg: str.error_something_went_wrong_try_again);
+              msg: cmStr.error_something_went_wrong_try_again);
         }
       },
     );
@@ -177,8 +177,8 @@ class CMMoreButton extends StatelessWidget {
   _onDelete(BuildContext context) async {
     if (reportTarget == ReportTarget.user) return;
     AppDialog.showAlertDialog(
-      title: str.text_confirm_delete_post,
-      cancelText: str.text_cancel,
+      title: cmStr.text_confirm_delete_post,
+      cancelText: cmStr.text_cancel,
       acceptedCallback: () async {
         Navigator.of(context).pop();
         bool deleted = false;
@@ -204,7 +204,7 @@ class CMMoreButton extends StatelessWidget {
           }
         } else {
           AppDialog.showFailedToast(
-              msg: str.error_something_went_wrong_try_again);
+              msg: cmStr.error_something_went_wrong_try_again);
         }
       },
     );

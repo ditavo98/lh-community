@@ -269,45 +269,45 @@ extension DateTimeEx on DateTime? {
     final endTime = jiffyNow;
     final years = endTime.diff(startTime, unit: Unit.year);
     if (years >= 1) {
-      return str.text_years_ago('$years');
+      return cmStr.text_years_ago('$years');
     }
 
     final months = endTime.diff(startTime, unit: Unit.month);
     if (months >= 1) {
-      return str.text_months_ago('$months');
+      return cmStr.text_months_ago('$months');
     }
     final weeks = endTime.diff(startTime, unit: Unit.week);
     if (weeks == 1) {
-      return str.text_lastweek;
+      return cmStr.text_lastweek;
     }
     if (weeks > 1) {
-      return str.text_weeks_ago('$weeks');
+      return cmStr.text_weeks_ago('$weeks');
     }
 
     final days = endTime.diff(startTime, unit: Unit.day);
     if (days == 1) {
-      return str.text_yesterday;
+      return cmStr.text_yesterday;
     }
     if (days > 1) {
-      return str.text_days_ago('$days');
+      return cmStr.text_days_ago('$days');
     }
 
     final hours = endTime.diff(startTime, unit: Unit.hour);
     if (hours >= 1) {
-      return str.text_hours_ago('$hours');
+      return cmStr.text_hours_ago('$hours');
     }
 
     final minutes = endTime.diff(startTime, unit: Unit.minute);
     if (minutes >= 1) {
-      return str.text_minutes_ago('$minutes');
+      return cmStr.text_minutes_ago('$minutes');
     }
 
     final seconds = endTime.diff(startTime, unit: Unit.second);
 
     if (seconds >= 10) {
-      return str.text_seconds_ago('$seconds');
+      return cmStr.text_seconds_ago('$seconds');
     }
-    return str.text_just_before;
+    return cmStr.text_just_before;
   }
 
   int get daysIn1Year {

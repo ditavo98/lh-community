@@ -76,13 +76,13 @@ class _State extends State<ReportDialog> {
 
   static String titleForTarget(String target) {
     if (target == ReportTarget.comment.name) {
-      return str.report_comment_desc;
+      return cmStr.report_comment_desc;
     }
     if (target == ReportTarget.user.name) {
-      return str.report_user_desc;
+      return cmStr.report_user_desc;
     }
     if (target == ReportTarget.post.name) {
-      return str.report_post_desc;
+      return cmStr.report_post_desc;
     }
     return '';
   }
@@ -103,7 +103,7 @@ class _State extends State<ReportDialog> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                str.report_reason_popup_title,
+                cmStr.report_reason_popup_title,
                 style: LHTextStyle.title1,
                 textAlign: TextAlign.left,
               ),
@@ -117,7 +117,7 @@ class _State extends State<ReportDialog> {
                 children: [
                   Expanded(
                     child: CMAppButton.outline(
-                      text: str.text_cancel,
+                      text: cmStr.text_cancel,
                       borderColor: CMColor.grey6,
                       textColor: CMColor.grey7,
                       onTap: () {
@@ -129,7 +129,7 @@ class _State extends State<ReportDialog> {
                   Expanded(
                     child: CMAppButton(
                       enable: selectedList.isNotEmpty,
-                      text: str.report_submit_btn,
+                      text: cmStr.report_submit_btn,
                       onTap: selectedList.isEmpty
                           ? null
                           : () async {
@@ -147,7 +147,7 @@ class _State extends State<ReportDialog> {
                                             .toList()));
                                 if (complete) {
                                   AppDialog.showSuccessToast(
-                                      msg: str.report_completed_successfully);
+                                      msg: cmStr.report_completed_successfully);
 
                                   Navigator.of(context).pop(true);
                                   return;

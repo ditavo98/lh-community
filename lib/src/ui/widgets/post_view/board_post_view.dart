@@ -58,8 +58,8 @@ class CMBoardPostView extends StatelessWidget {
             style:
                 LHTextStyle.body1.copyWith(color: CMColor.grey6, height: 1.4),
             colorClickableText: CMColor.primary5,
-            trimCollapsedText: '...${str.text_read_more}',
-            trimExpandedText: str.text_read_less,
+            trimCollapsedText: '...${cmStr.text_read_more}',
+            trimExpandedText: cmStr.text_read_less,
           )
         else
           Text(

@@ -47,7 +47,7 @@ class ReportRepo {
       } else {
         if (kDebugMode) {
           AppDialog.showFailedToast(
-              msg: res.message ?? str.error_something_went_wrong_try_again);
+              msg: res.message ?? cmStr.error_something_went_wrong_try_again);
         }
       }
     } catch (err) {
@@ -90,7 +90,7 @@ class ReportRepo {
         LHLoadingScreen.close();
         if (kDebugMode) {
           AppDialog.showFailedToast(
-              msg: res.message ?? str.error_something_went_wrong_try_again);
+              msg: res.message ?? cmStr.error_something_went_wrong_try_again);
         }
       }
     } catch (err) {
@@ -113,7 +113,7 @@ class ReportRepo {
         LHLoadingScreen.close();
         if (kDebugMode) {
           AppDialog.showFailedToast(
-              msg: res.message ?? str.error_something_went_wrong_try_again);
+              msg: res.message ?? cmStr.error_something_went_wrong_try_again);
         }
       }
     } catch (err) {
@@ -137,7 +137,7 @@ class ReportRepo {
         LHLoadingScreen.close();
         if (kDebugMode) {
           AppDialog.showFailedToast(
-              msg: res.message ?? str.error_something_went_wrong_try_again);
+              msg: res.message ?? cmStr.error_something_went_wrong_try_again);
         }
       }
     } catch (err) {

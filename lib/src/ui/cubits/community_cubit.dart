@@ -70,7 +70,7 @@ class CMPostCubit extends Cubit<CMPostState> with CubitMixin {
   _listener() {
     _sub = LHEventBus.eventBus.on().listen(
       (event) {
-        if (event is ReloadPostPage) {
+        if (event is ReloadPostPage || event is ReloadPostTypeEvent) {
           getData();
         }
       },

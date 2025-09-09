@@ -71,6 +71,7 @@ class LHCommunity {
 
   void updatePostType(List<CMPostTypePartnerData> partnerData) {
     _partnerData = partnerData;
+    LHEventBus.eventBus.fire(ReloadPostTypeEvent());
   }
 
   _listener() {
@@ -101,7 +102,7 @@ class LHCommunity {
             }
             print('Main Screen - filePath - $filePath');
             AppDialog.showSuccessToast(
-              msg: isVideo ? str.text_video_saved : str.text_photo_saved,
+              msg: isVideo ? cmStr.text_video_saved : cmStr.text_photo_saved,
               leading: Icon(
                 Icons.check,
                 size: 16,

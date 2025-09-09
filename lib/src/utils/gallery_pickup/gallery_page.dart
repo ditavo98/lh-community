@@ -85,7 +85,7 @@ class GalleryPage extends StatefulWidget {
     final result = await AppDialog.showCupertinoActionSheet(
       context,
       actions: actions,
-      cancelWidget: Text(str.text_close,
+      cancelWidget: Text(cmStr.text_close,
           style: LHTextStyle.button1.copyWith(color: CMColor.primary5)),
     );
     if (result != true) return;
@@ -374,7 +374,7 @@ class _GalleryPageState extends State<GalleryPage>
         onTap: () {
           Navigator.of(context).pop(state.selectedImages);
         },
-        child: Text(str.text_check, style: LHTextStyle.button1),
+        child: Text(cmStr.text_check, style: LHTextStyle.button1),
       ),
     );
   }
@@ -401,7 +401,7 @@ class _GalleryPageState extends State<GalleryPage>
           return Center(
             child: CMAppButton(
               onTap: PhotoManager.openSetting,
-              text: str.go_to_setting,
+              text: cmStr.go_to_setting,
               isExpand: false,
               radius: 40,
             ),

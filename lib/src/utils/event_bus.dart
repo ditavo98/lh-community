@@ -17,6 +17,8 @@ class ReloadSectionTypeEvent {
 //TODO chưa có làm cái này cần làm
 class ForceReloadEvent {}
 
+class ReloadPostTypeEvent {}
+
 class EventBus {
   final StreamController _streamController;
 

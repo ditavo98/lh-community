@@ -147,7 +147,7 @@ class AppDialog {
     cancelBorderColor ??= CMColor.grey3;
     messageColor ??= CMColor.grey7;
 
-    acceptText ??= str.text_check;
+    acceptText ??= cmStr.text_check;
     final ctx = context ?? LHCommunity().context;
     dynamic result = await showDialog(
       barrierDismissible: barrierDismissible,
@@ -354,9 +354,9 @@ class AppDialog {
     return showAlertDialog(
       context: context,
       messageColor: CMColor.error,
-      title: title ?? str.text_notice,
+      title: title ?? cmStr.text_notice,
       message: message,
-      acceptText: acceptText ?? str.text_check,
+      acceptText: acceptText ?? cmStr.text_check,
       cancelText: cancelText,
       acceptedCallback: acceptedCallback,
       canceledCallback: canceledCallback,
@@ -501,10 +501,10 @@ class AppDialog {
   static Future alertMediaPermission(BuildContext context) async {
     dynamic isAccept = await showAlertDialog(
       context: context,
-      title: str.filesAndPhotos,
-      message: str.youCanSharePhotosAndFilesInYourProfileSettingsAndChat,
-      acceptText: str.text_check,
-      cancelText: str.text_cancel,
+      title: cmStr.filesAndPhotos,
+      message: cmStr.youCanSharePhotosAndFilesInYourProfileSettingsAndChat,
+      acceptText: cmStr.text_check,
+      cancelText: cmStr.text_cancel,
     );
     if (isAccept) {
       await AppSettings.openAppSettings(type: AppSettingsType.settings);

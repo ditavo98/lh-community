@@ -144,7 +144,7 @@ class ToastUtil {
                   color: Colors.transparent,
                   padding: const EdgeInsets.all(2),
                   child: Text(
-                    str.text_cancel,
+                    cmStr.text_cancel,
                     style: LHTextStyle.body3.copyWith(color: Colors.white),
                   ),
                 ),

@@ -88,7 +88,7 @@ class _SelectPostType extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             spacing: 8,
             children: [
-              Text(str.artists,
+              Text(cmStr.artists,
                   style: LHTextStyle.h4.copyWith(height: 32 / 20)),
               Wrap(
                 spacing: 12,
@@ -99,7 +99,7 @@ class _SelectPostType extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                text: str.text_close,
+                text: cmStr.text_close,
               )
             ],
           ),

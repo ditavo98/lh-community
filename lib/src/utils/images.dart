@@ -31,7 +31,7 @@ Future<File?> pickVideoByCamera() async {
 
   if (mb > maxFileSize) {
     AppDialog.showFailedToast(
-        msg: str.text_max_file_size(maxFileSize));
+        msg: cmStr.text_max_file_size(maxFileSize));
     return null;
   }
   return file;

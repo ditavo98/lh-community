@@ -135,7 +135,7 @@ class CMPostDetailScreen extends StatelessWidget {
                           ),
                           contentPadding: const EdgeInsets.symmetric(
                               vertical: 4, horizontal: 20),
-                          hintText: str.text_enter_comment,
+                          hintText: cmStr.text_enter_comment,
                         ),
                       ),
                     ),
@@ -211,7 +211,7 @@ class CMPostDetailScreen extends StatelessWidget {
                   return const Center(child: CircularProgressIndicator());
                 }
                 if (state.comments.isNullOrEmpty) {
-                  return NoData(text: str.text_no_comments_yet);
+                  return NoData(text: cmStr.text_no_comments_yet);
                 }
                 return LoadMore(
                   onLoadMore: () {
@@ -365,7 +365,7 @@ class _CommentItem extends StatelessWidget {
         ExpandableText(
           comment.comment ?? '',
           style: LHTextStyle.body1_1,
-          expandText: str.text_read_more,
+          expandText: cmStr.text_read_more,
           linkStyle: LHTextStyle.body1_1,
           collapseOnTextTap: false,
           maxLines: 2,

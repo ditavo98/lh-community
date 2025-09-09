@@ -82,11 +82,11 @@ class _CMCreatePostState extends State<CMCreatePost> {
   SectionType? get _sectionType => _cubit.initSectionType?.sectionType;
 
   String get _appBarTitle => switch (_sectionType) {
-        SectionType.board => str.text_write_support_message,
-        SectionType.feed => str.text_create_feed,
-        SectionType.gallery => str.text_create_gallery,
-        SectionType.fileboard => str.text_write_streaming_post,
-        _ => str.text_write_support_message
+        SectionType.board => cmStr.text_write_support_message,
+        SectionType.feed => cmStr.text_create_feed,
+        SectionType.gallery => cmStr.text_create_gallery,
+        SectionType.fileboard => cmStr.text_write_streaming_post,
+        _ => cmStr.text_write_support_message
       };
 
   @override
@@ -145,7 +145,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
             CMImageView(cmSvg.icImageV3, size: 24),
             const SizedBox(width: 6),
             Text(
-              str.text_select_album,
+              cmStr.text_select_album,
               style: LHTextStyle.subtitle3_1.copyWith(color: CMColor.grey6),
             )
           ],
@@ -198,7 +198,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
               color: Colors.white,
               child: CupertinoActionSheetAction(
                 child: Text(
-                  str.text_take_a_picture,
+                  cmStr.text_take_a_picture,
                   style:
                       LHTextStyle.button1.copyWith(color: CMColor.primary5),
                 ),
@@ -216,7 +216,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
               color: Colors.white,
               child: CupertinoActionSheetAction(
                 child: Text(
-                  str.text_take_a_video,
+                  cmStr.text_take_a_video,
                   style:
                       LHTextStyle.button1.copyWith(color: CMColor.primary5),
                 ),
@@ -231,7 +231,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
               ),
             ),
           ],
-          cancelWidget: Text(str.text_cancel,
+          cancelWidget: Text(cmStr.text_cancel,
               style: LHTextStyle.button1.copyWith(color: CMColor.red9)),
         );
       },
@@ -248,7 +248,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
             CMImageView(cmSvg.icImageV3, size: 24),
             const SizedBox(width: 6),
             Text(
-              str.text_add_photo,
+              cmStr.text_add_photo,
               style: LHTextStyle.subtitle3_1.copyWith(color: CMColor.grey6),
             )
           ],
@@ -319,7 +319,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
             }
           : null,
       child: Text(
-        str.text_post,
+        cmStr.text_post,
         style: LHTextStyle.subtitle2
             .copyWith(color: enable ? CMColor.primary5 : CMColor.grey4),
       ),
@@ -403,7 +403,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
       maxLength: 1000,
       controller: _cubit.contentCtl,
       contentPadding: const EdgeInsets.symmetric(vertical: 11),
-      hintText: str.text_share_with_fans,
+      hintText: cmStr.text_share_with_fans,
       hintStyle: LHTextStyle.body1_1.copyWith(color: CMColor.grey5),
       fillColor: CMColor.white,
       textStyle: LHTextStyle.body1_1.copyWith(color: CMColor.grey7),
@@ -417,7 +417,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(str.text_share_artist_photo, style: LHTextStyle.body1_1),
+        Text(cmStr.text_share_artist_photo, style: LHTextStyle.body1_1),
         Dimen.sBHeight8,
         BlocBuilder<SelectedAttachmentCubit, SelectedAttachmentState>(
           builder: (context, state) {
@@ -452,7 +452,7 @@ class _CMCreatePostState extends State<CMCreatePost> {
       counter: const SizedBox.shrink(),
       contentPadding: const EdgeInsets.symmetric(vertical: 11),
       controller: _cubit.titleCtl,
-      hintText: str.text_enter_title2,
+      hintText: cmStr.text_enter_title2,
       hintStyle: LHTextStyle.subtitle1_1.copyWith(color: CMColor.grey5),
       fillColor: CMColor.white,
       textStyle: LHTextStyle.subtitle1_1,
@@ -465,8 +465,8 @@ class _CMCreatePostState extends State<CMCreatePost> {
       contentPadding: const EdgeInsets.symmetric(vertical: 11),
       controller: _cubit.contentCtl,
       hintText: _sectionType == SectionType.fileboard
-          ? str.text_leave_streaming_proofshot
-          : str.text_write_support_message_to_artist,
+          ? cmStr.text_leave_streaming_proofshot
+          : cmStr.text_write_support_message_to_artist,
       hintStyle: LHTextStyle.body1_1.copyWith(color: CMColor.grey5),
       fillColor: CMColor.white,
       textStyle: LHTextStyle.body1_1.copyWith(color: CMColor.grey7),

@@ -78,7 +78,7 @@ class SelectImagesCubit extends Cubit<SelectImagesState> with CubitMixin {
     if (selectedImage.mediumType == MediumType.video) {
       if ((selectedImage.size ?? 0) > 52428800) {
         AppDialog.showFailedToast(
-            msg: str.text_max_file_size(50));
+            msg: cmStr.text_max_file_size(50));
         return;
       }
     }
@@ -92,7 +92,7 @@ class SelectImagesCubit extends Cubit<SelectImagesState> with CubitMixin {
       imagesSelected.remove(selectedImage);
     } else {
       if (state.selectedImages.length == limit) {
-        AppDialog.showFailedToast(msg: str.maximumImage(limit));
+        AppDialog.showFailedToast(msg: cmStr.maximumImage(limit));
         return;
       }
       imagesSelected.add(selectedImage);
